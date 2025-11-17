@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Para Mi Amor ❤️✨</title>
+
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    background: #0b0b0c;
+    color: #fff;
+    font-family: "Times New Roman", serif;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+/* Encanto visual */
+h2, h3, p {
+    text-shadow: 0 0 10px rgba(255,80,120,0.6);
+}
+
+button {
+    padding: 18px 28px;
+    font-size: 19px;
+    border-radius: 10px;
+    border: none;
+    background: linear-gradient(45deg, #ff004c, #ff5e91);
+    color: white;
+    cursor: pointer;
+    transition: .3s ease;
+    font-weight: bold;
+}
+button:hover {
+    transform: scale(1.12);
+    box-shadow: 0 0 15px #ff004c;
+}
+
+.contenido {
+    display: none;
+    padding: 30px;
+    animation: fade .9s ease;
+}
+#inicio { display: block; margin-top: 120px; }
+
+@keyframes fade {
+    from {opacity: 0; transform: scale(.94);}
+    to {opacity: 1; transform: scale(1);}
+}
+
+/* Fondo romántico suave */
+body::before {
+    content: "";
+    position: fixed;
+    top:0; left:0;
+    width:100%; height:100%;
+    background: radial-gradient(rgba(255,0,69,0.15), transparent);
+    z-index:-1;
+}
+
+/* Corazones flotando */
+.heart {
+    position: fixed;
+    width: 22px;
+    height: 22px;
+    background: #ff074d;
+    transform: rotate(45deg);
+    animation: float 6s infinite linear;
+    opacity: .6;
+}
+.heart::before, .heart::after {
+    content: "";
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    background: #ff074d;
+    border-radius: 50%;
+}
+.heart::before { top: -10px; left: 0; }
+.heart::after { left: -10px; top: 0; }
+
+@keyframes float {
+    0% { transform: translateY(0) rotate(45deg); }
+    100% { transform: translateY(-250px) rotate(45deg); opacity: 0; }
+}
+
+img {
+    width: 92%;
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(255,0,80,0.8);
+    margin-bottom: 20px;
+}
+
+/* Mensaje final */
+#mensajeFinal {
+    font-size: 26px;
+    line-height: 34px;
+    color: #ff2d6a;
+    font-weight: bold;
+    text-shadow: 0 0 22px #ff0059;
+    padding: 20px;
+}
+
+.big-heart {
+    font-size: 65px;
+    animation: pulse 1.1s infinite;
+}
+@keyframes pulse {
+    50% {transform: scale(1.25);}
+}
+
+/* Botón que aparece después */
+#botonReal {
+    display: none;
+    margin-top: 20px;
+    animation: fade .8s ease;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Corazones -->
+<div class="heart" style="left:12%; animation-delay:0s;"></div>
+<div class="heart" style="left:28%; animation-delay:1.2s;"></div>
+<div class="heart" style="left:45%; animation-delay:2s;"></div>
+<div class="heart" style="left:62%; animation-delay:.8s;"></div>
+<div class="heart" style="left:82%; animation-delay:1.5s;"></div>
+
+<div id="inicio">
+    <h2>❤️ Mi Amor ❤️</h2>
+    <p>Este viaje es nuestro, así como nuestro amor…</p>
+    <button onclick="mostrar(1)">Comenzar ✨</button>
+</div>
+
+<!-- FOTO 1 -->
+<div id="foto1" class="contenido">
+    <h3>Nuestro inicio 💫</h3>
+    <p>Donde mi corazón empezó a elegirte…</p>
+    <img src="https://i.postimg.cc/k4sJwhTf/Whats-App-Image-2025-11-17-at-2-29-02-AM.jpg">
+    <button onclick="mostrar(2)">Siguiente 👉</button>
+</div>
+
+<!-- FOTO 2 -->
+<div id="foto2" class="contenido">
+    <h3>Nuestra chispa 🔥</h3>
+    <p>Las miradas que decían más que mil palabras…</p>
+    <img src="https://i.postimg.cc/xTDQMQjS/Whats-App-Image-2025-11-17-at-2-24-52-AM.jpg">
+    <button onclick="mostrar(3)">Siguiente 👉</button>
+</div>
+
+<!-- FOTO 3 -->
+<div id="foto3" class="contenido">
+    <h3>Nuestra complicidad 💞</h3>
+    <p>Tu risa, mi paz. Tus ojos, mi lugar favorito…</p>
+    <img src="https://i.postimg.cc/QtKLK4R8/Whats-App-Image-2025-11-17-at-2-23-30-AM.jpg">
+    <button onclick="mostrar(4)">Siguiente 👉</button>
+</div>
+
+<!-- ÚLTIMA PANTALLA ANTES DEL MENSAJE -->
+<div id="foto4" class="contenido">
+    <h3>Nuestro cariño 🤍</h3>
+    <p>Y cada abrazo tuyo… casa.</p>
+    <button onclick="mostrar(5)">Siguiente 👉</button>
+</div>
+
+<div id="foto5" class="contenido">
+    <h3>Nuestra conexión ❤️‍🔥</h3>
+    <p>Listo para lo mejor? 😘</p>
+    <button id="botonFinal" onclick="huir(this)">Ver mensaje 💌</button>
+    <button id="botonReal" onclick="final()">Ahora sí 💖</button>
+</div>
+
+<!-- MENSAJE FINAL -->
+<div id="final" class="contenido">
+    <div class="big-heart">❤️</div>
+    <p id="mensajeFinal">
+        Feliz cumpleaños mi amor ✨❤️<br><br>
+        Gracias por existir, por sentir conmigo, por ser tú…  
+        Te elijo hoy, mañana y en cada universo posible.  
+        Tú y yo, de la mano, en esta vida y en la que sigue.  
+        Eres mi sueño más bonito hecho realidad. 💋❤️
+    </p>
+</div>
+
+<script>
+let veces = 0;
+
+function mostrar(n) {
+    document.querySelectorAll('.contenido, #inicio').forEach(el => el.style.display = 'none');
+    document.getElementById("foto" + n).style.display = 'block';
+}
+
+function huir(btn) {
+    veces++;
+    
+    if (veces <= 7) {
+        btn.style.position = "relative";
+        btn.style.left = `${Math.random()*200 - 100}px`;
+        btn.style.top = `${Math.random()*100 - 50}px`;
+    } else {
+        btn.style.display = "none";
+        document.getElementById("botonReal").style.display = "inline-block";
+    }
+}
+
+function final() {
+    document.querySelectorAll('.contenido').forEach(el => el.style.display = 'none');
+    document.getElementById("final").style.display = 'block';
+}
+</script>
+
+</body>
+</html>
